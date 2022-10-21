@@ -10,12 +10,12 @@ const { ensureAuth } = require("../middleware/auth");
 router.get("/:id", ensureAuth, fashionController.getFashion);
 
 //Enables user to create post w/ cloudinary for media uploads
-router.post("/createFashion", upload.single("file"), fashionController.createFashion);
+router.post("/createFashion", upload.single("file"), fashionController.createfashion);
 
-router.post("/favoritestyle/:id", fashionController.favoriteFashion);
+router.post("/favoritestyle/:id", fashionController.favoritefashion);
 
 //Enables user to like post. In controller, uses POST model to update likes by 1
-router.put("/likeFashion/:id", fashionController.likeFashion);
+router.put("/likeFashion/:id", fashionController.likefashion);
 
 //Enables user to delete post. In controller, uses POST model to delete post from MongoDB collection
 router.delete("/deleteFashion/:id", fashionController.deleteFashion);
